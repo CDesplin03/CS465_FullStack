@@ -1,0 +1,163 @@
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+    <h2 class="text-center mb-4">Edit Trip</h2>
+
+    @if (editForm) {
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group mb-3">
+            <label for="code">Code:</label>
+            <input
+              id="code"
+              type="text"
+              formControlName="code"
+              placeholder="Code"
+              class="form-control"
+              [class.is-invalid]="submitted && f['code'].invalid"
+            />
+
+            @if (submitted && f['code'].hasError('required')) {
+              <div class="invalid-feedback">
+                Trip Code is required
+              </div>
+            }
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="name">Name:</label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              placeholder="Name"
+              class="form-control"
+              [class.is-invalid]="submitted && f['name'].invalid"
+            />
+
+            @if (submitted && f['name'].hasError('required')) {
+              <div class="invalid-feedback">
+                Name is required
+              </div>
+            }
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="length">Length:</label>
+            <input
+              id="length"
+              type="text"
+              formControlName="length"
+              placeholder="Length"
+              class="form-control"
+              [class.is-invalid]="submitted && f['length'].invalid"
+            />
+
+            @if (submitted && f['length'].hasError('required')) {
+              <div class="invalid-feedback">
+                Length is required
+              </div>
+            }
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="start">Start:</label>
+            <input
+              id="start"
+              type="date"
+              formControlName="start"
+              class="form-control"
+              [class.is-invalid]="submitted && f['start'].invalid"
+            />
+
+            @if (submitted && f['start'].hasError('required')) {
+              <div class="invalid-feedback">
+                Date is required
+              </div>
+            }
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="resort">Resort:</label>
+            <input
+              id="resort"
+              type="text"
+              formControlName="resort"
+              placeholder="Resort"
+              class="form-control"
+              [class.is-invalid]="submitted && f['resort'].invalid"
+            />
+
+            @if (submitted && f['resort'].hasError('required')) {
+              <div class="invalid-feedback">
+                Resort is required
+              </div>
+            }
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="perPerson">Per Person:</label>
+            <input
+              id="perPerson"
+              type="text"
+              formControlName="perPerson"
+              placeholder="Per Person"
+              class="form-control"
+              [class.is-invalid]="submitted && f['perPerson'].invalid"
+            />
+
+            @if (submitted && f['perPerson'].hasError('required')) {
+              <div class="invalid-feedback">
+                Per Person is required
+              </div>
+            }
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="image">Image Name:</label>
+            <input
+              id="image"
+              type="text"
+              formControlName="image"
+              placeholder="Image"
+              class="form-control"
+              [class.is-invalid]="submitted && f['image'].invalid"
+            />
+
+            @if (submitted && f['image'].hasError('required')) {
+              <div class="invalid-feedback">
+                Image Name is required
+              </div>
+            }
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="description">Description:</label>
+            <input
+              id="description"
+              type="text"
+              formControlName="description"
+              placeholder="Description"
+              class="form-control"
+              [class.is-invalid]="submitted && f['description'].invalid"
+            />
+
+            @if (submitted && f['description'].hasError('required')) {
+              <div class="invalid-feedback">
+                Description is required
+              </div>
+            }
+          </div>
+
+          <button type="submit" class="btn btn-info">
+            Save
+          </button>
+
+        </form>
+      }
+
+    </div>
+  </div>
+</div>
