@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from "@angula
 import { Router } from "@angular/router";
 import { TripDataService } from '../services/trip-data.service';
 
+import { AuthenticationService }  from '../services/authentication.service';
+
 @Component({
   selector: 'app-add-trip',
   standalone: true,
@@ -20,7 +22,8 @@ submitted = false;
 constructor(
 private formBuilder: FormBuilder,
 private router: Router,
-private tripService: TripDataService
+private tripService: TripDataService,
+private authenticationService: AuthenticationService
 ) { }
 ngOnInit() {
 this.addForm = this.formBuilder.group({
